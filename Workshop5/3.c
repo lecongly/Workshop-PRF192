@@ -50,7 +50,7 @@ void function2() {
 
 int main() {
   char maxChoice = '3';
-  int userChoice;
+  char userChoice;
   do {
     userChoice = getUserChoice();
     switch (userChoice) {
