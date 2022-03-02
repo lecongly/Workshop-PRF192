@@ -6,12 +6,11 @@
 unsigned long long scanCode() {
   long long MAXCODE = 9999999999;
   printf("ISBN Validator\n");
-  printf("===============\n");
   long code;
-  printf("ISBN (0 to quit) : ");
+  printf("Enter ISBN: ");
   do {
     scanf("%ld", & code);
-    if (code > MAXCODE) printf("Only accept a number less or equal exactly 10 digits!!!\n");
+    if (code > MAXCODE) printf("Only accept a number less or equal 10 digits!!!\n");
   } while (code > MAXCODE);
   return code;
 }
