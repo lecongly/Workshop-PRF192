@@ -6,6 +6,7 @@
 unsigned long long scanCode() {
   long long MAXCODE = 9999999999;
   printf("ISBN Validator\n");
+  printf("============ \n");
   long code;
   printf("Enter ISBN: ");
   do {
