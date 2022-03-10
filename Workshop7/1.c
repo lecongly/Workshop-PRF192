@@ -1,18 +1,19 @@
-#include <stdio.h>
+#include<stdio.h>
 
-#include <string.h>
+#include<string.h>
+
+#include<windows.h>
 
 #include <stdbool.h>
 
 #define MAX_LENGTH 100
 #define NUM_STRINGS 21
 
-
 void add(char list[MAX_LENGTH][NUM_STRINGS], int * pn) {
   char hs[NUM_STRINGS];
   fflush(stdin);
   printf("Enter name students:");
-  scanf("%s", hs);
+  gets(hs);
   strcpy(list[ * pn], hs);
   ( * pn) ++;
   printf("Added\n");
@@ -65,11 +66,11 @@ int main() {
     int choose;
 
     printf("-----------------Menu-----------------\n");
-    printf("1- Add a student\n");
-    printf("2- Remove a student\n");
-    printf("3- Search a student \n");
-    printf("4- Print the list in ascending order\n");
-    printf("5- Quit\n");
+    printf("|1- Add a student\n");
+    printf("|2- Remove a student\n");
+    printf("|3- Search a student \n");
+    printf("|4- Print the list in ascending order\n");
+    printf("|5- Quit\n");
     printf("--------------------------------------\n");
     printf("Choose: ");
     fflush(stdin);
@@ -78,24 +79,34 @@ int main() {
     case 1:
       if (n == MAX_LENGTH) printf("Can't Add anymore!\n");
       else add(list, & n);
+      system("pause");
+      system("cls");
       break;
     case 2:
       if (n == 0) printf("Impossible to remove!\n");
       else removed(list, & n);
+      system("pause");
+      system("cls");
       break;
     case 3:
       if (n == 0) printf("Nothing to search!\n");
       else search(list, & n);
+      system("pause");
+      system("cls");
       break;
     case 4:
       if (n == 0) printf("Nothing to print!\n");
       else print(list, & n);
+      system("pause");
+      system("cls");
       break;
     case 5:
       return 0;
       break;
     default:
       printf("1 to 5 only!\n");
+      system("pause");
+      system("cls");
       break;
     }
   }
