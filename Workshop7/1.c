@@ -6,11 +6,10 @@
 
 #include <stdbool.h>
 
-#define MAX_LENGTH 100
-#define NUM_STRINGS 21
+#define MAX 100
 
-void add(char list[MAX_LENGTH][NUM_STRINGS], int * pn) {
-  char hs[NUM_STRINGS];
+void add(char list[MAX][21], int * pn) {
+  char hs[21];
   fflush(stdin);
   printf("Enter name students:");
   gets(hs);
@@ -18,10 +17,10 @@ void add(char list[MAX_LENGTH][NUM_STRINGS], int * pn) {
   ( * pn) ++;
   printf("Added\n");
 }
-void search(char list[MAX_LENGTH][NUM_STRINGS], int * pn) {
+void search(char list[MAX][21], int * pn) {
   int i;
   printf("Searching for : ");
-  char hs[NUM_STRINGS];
+  char hs[21];
   fflush(stdin);
   scanf("%s", hs);
   for (i = 0; i < * pn; i++) {
@@ -29,7 +28,7 @@ void search(char list[MAX_LENGTH][NUM_STRINGS], int * pn) {
     if (ptr != '\0') printf("RESULT : Name[%d] : %s\n", i, list[i]);
   }
 }
-void removed(char list[MAX_LENGTH][NUM_STRINGS], int * pn) {
+void removed(char list[MAX][21], int * pn) {
   int del, i;
   for (i = 0; i < ( * pn); i++) {
     printf("Name[%d] : %s \n", i, list[i]);
@@ -44,7 +43,7 @@ void removed(char list[MAX_LENGTH][NUM_STRINGS], int * pn) {
     ( * pn) --;
   } else printf("UnRemoved!\n");
 }
-void print(char list[MAX_LENGTH][NUM_STRINGS], int * pn) {
+void print(char list[MAX][21], int * pn) {
   int i, j;
   for (i = 0; i < * pn - 1; i++)
     for (j = * pn - 1; j > i; j--)
@@ -60,7 +59,7 @@ void print(char list[MAX_LENGTH][NUM_STRINGS], int * pn) {
 }
 int main() {
   int n = 0;
-  char list[MAX_LENGTH][NUM_STRINGS];
+  char list[MAX][21];
 
   while (true) {
     int choose;
@@ -77,7 +76,7 @@ int main() {
     scanf("%d", & choose);
     switch (choose) {
     case 1:
-      if (n == MAX_LENGTH) printf("Can't Add anymore!\n");
+      if (n == MAX) printf("Can't Add anymore!\n");
       else add(list, & n);
       system("pause");
       system("cls");
