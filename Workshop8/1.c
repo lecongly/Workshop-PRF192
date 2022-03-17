@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include<cctype>
 int exist (char* filename) {
 	int existed = 0;
 

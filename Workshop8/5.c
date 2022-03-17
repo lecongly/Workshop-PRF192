@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void processFile(char*fname, int *pCount, double *pSum){
-  FILE* f= fopen(filename, "r");
+  FILE* f= fopen(fname, "r");
   *pCount = 0;
   *pSum = 0;
   double x;
